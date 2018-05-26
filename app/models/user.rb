@@ -4,8 +4,5 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :players
   validates :name, presence: true, on: :update
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> generate_models
+
