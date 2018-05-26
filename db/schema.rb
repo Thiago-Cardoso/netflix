@@ -10,11 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_26_020001) do
+ActiveRecord::Schema.define(version: 2018_05_26_153135) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "fuzzystrmatch"
-  enable_extension "pg_trgm"
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
@@ -93,7 +91,7 @@ ActiveRecord::Schema.define(version: 2018_05_26_020001) do
     t.string "thumbnail_cover_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "last_watched_episode_id"
+    t.bigint "last_watched_episode_id"
     t.index ["category_id"], name: "index_series_on_category_id"
     t.index ["last_watched_episode_id"], name: "index_series_on_last_watched_episode_id"
   end
