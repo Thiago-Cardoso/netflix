@@ -8,6 +8,9 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.string :video_key
       t.integer :episode_number
       t.string :featured_thumbnail_key
+      t.references :serie, optional: true, foreign_key: true
+      t.references :category, foreign_key: true
+      t.string :thumbnail_cover_key
 
       t.timestamps
     end

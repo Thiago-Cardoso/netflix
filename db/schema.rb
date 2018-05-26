@@ -41,8 +41,13 @@ ActiveRecord::Schema.define(version: 2018_05_26_020001) do
     t.string "video_key"
     t.integer "episode_number"
     t.string "featured_thumbnail_key"
+    t.bigint "serie_id"
+    t.bigint "category_id"
+    t.string "thumbnail_cover_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_movies_on_category_id"
+    t.index ["serie_id"], name: "index_movies_on_serie_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -112,6 +117,8 @@ ActiveRecord::Schema.define(version: 2018_05_26_020001) do
   end
 
   add_foreign_key "favorites", "users"
+  add_foreign_key "movies", "categories"
+  add_foreign_key "movies", "series", column: "serie_id"
   add_foreign_key "players", "movies"
   add_foreign_key "players", "users"
   add_foreign_key "reviews", "users"
