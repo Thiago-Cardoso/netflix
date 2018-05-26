@@ -7,12 +7,12 @@ default: &default
 
 development:
   <<: *default
-  database: netflix_development
+  database: netflixt_development
 
 test:
   <<: *default
-  database: netflix_test
+  database: netflixt_test
 
 production:
   <<: *default
-  database: netflix_production
+  database: netflixt_production
