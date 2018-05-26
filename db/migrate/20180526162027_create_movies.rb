@@ -11,7 +11,7 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.references :serie, optional: true, foreign_key: true
       t.references :category, foreign_key: true
       t.string :thumbnail_cover_key
-      
+
       t.timestamps
     end
   end

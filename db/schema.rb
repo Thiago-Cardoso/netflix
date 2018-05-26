@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_26_153135) do
+ActiveRecord::Schema.define(version: 2018_05_26_162054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,7 +82,6 @@ ActiveRecord::Schema.define(version: 2018_05_26_153135) do
   end
 
   create_table "series", force: :cascade do |t|
-    t.boolean "highlighted", default: false
     t.string "title"
     t.text "description"
     t.string "thumbnail_key"
