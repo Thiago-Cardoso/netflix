@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 # Categories
 ror = Category.create(name: 'Ruby On Rails')
 talks = Category.create(name: 'Talks')
@@ -49,4 +46,4 @@ Favorite.create(favoritable: Movie.all[1], user: user1)
 Favorite.create(favoritable: Movie.all[2], user: user1)
 Favorite.create(favoritable: Movie.all[3], user: user1)
 Favorite.create(favoritable: Movie.all[4], user: user1)
->>>>>>> generate_models
+
