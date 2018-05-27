@@ -1,6 +1,6 @@
 class Api::V1::SerieSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :id, :title, :description, thumbnail_key, featured_thumbnail_key
+  attributes :id, :title, :description
   has_many :episodes, record_type: :movies, serializer: :movie
 
   attribute :type do |object|
@@ -25,16 +25,18 @@ class Api::V1::SerieSerializer
     end
   end
 
-  attribute ​:thumbnail_url​ ​do​ |object|
-    "/thumbnails/​#{object.thumbnail_key}​"
-  ​end
-  attribute ​:thumbnail_cover_url​ ​do​ |object|
-    ​"/thumbnails/​#{object.thumbnail_cover_key}​"
-  ​end
-  attribute ​:featured_thumbnail_url​ ​do​ |object|
-  ​if​ object[​:featured_thumbnail_key​].present?
-  ​  "/videos/​#{object.video_key}​"
-  ​end
- ​end
+  attribute :thumbnail_url do |object|
+    "/thumbnails/#{object.thumbnail_key}"
+  end
+
+  attribute :thumbnail_cover_url do |object|
+    "/thumbnails/#{object.thumbnail_cover_key}"
+  end
+
+  attribute :featured_thumbnail_url do |object|
+    if object[:featured_thumbnail_key].present?
+      "/thumbnails/#{object.featured_thumbnail_key}"
+    end
+  end
 
 end
