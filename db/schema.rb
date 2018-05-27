@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2018_05_26_162054) do
   end
 
   create_table "series", force: :cascade do |t|
+    t.boolean "highlighted", default: false
     t.string "title"
     t.text "description"
     t.string "thumbnail_key"
